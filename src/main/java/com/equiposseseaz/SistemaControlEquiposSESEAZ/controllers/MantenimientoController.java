@@ -59,8 +59,16 @@ public class MantenimientoController {
         return ResponseEntity.noContent().build();
     }
 
+    @GetMapping("/asignacion/{asignacionId}")
+    public ResponseEntity<List<Mantenimiento>> obtenerMantenimientosPorAsignacion(@PathVariable ObjectId asignacionId) {
+        return ResponseEntity.ok(mantenimientoService.obtenerMantenimientosPorAsignacion(asignacionId));
+    }
+
     @GetMapping("/equipo/{equipoId}")
     public ResponseEntity<List<Mantenimiento>> obtenerMantenimientosPorEquipo(@PathVariable ObjectId equipoId) {
         return ResponseEntity.ok(mantenimientoService.obtenerMantenimientosPorEquipo(equipoId));
     }
+
+
+
 }

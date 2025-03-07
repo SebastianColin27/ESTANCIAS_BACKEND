@@ -1,4 +1,5 @@
 package com.equiposseseaz.SistemaControlEquiposSESEAZ.models;
+    import com.fasterxml.jackson.annotation.JsonFormat;
     import lombok.*;
     import org.springframework.data.annotation.Id;
     import org.springframework.data.mongodb.core.mapping.Document;
@@ -17,6 +18,8 @@ package com.equiposseseaz.SistemaControlEquiposSESEAZ.models;
         private ObjectId id;
         private String nombre;
         private String cargo;
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
         private Date fechaIngreso;
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
         private Date fechaEgreso;
     }

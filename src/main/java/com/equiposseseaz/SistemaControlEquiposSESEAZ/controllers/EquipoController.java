@@ -55,8 +55,20 @@ public class EquipoController {
 
     }
 
-    @GetMapping("/buscar")
-    public ResponseEntity<Equipo> buscarEquipoPorNumeroDeSerie(@RequestParam("numeroSerie") String numeroSerie) {
+    @GetMapping("/buscarSerie")
+    public ResponseEntity<Equipo> buscarEquipoPorNumeroDeSerie(@RequestParam("serieEquipo") String numeroSerie) {
         return ResponseEntity.ok(equipoService.buscarEquipoPorNumeroDeSerie(numeroSerie));
     }
+
+    @GetMapping("/buscarMarca")
+    public ResponseEntity<Equipo> buscarEquipoPorMarca(@RequestParam("marcaEquipo") String marcaEquipo) {
+        return ResponseEntity.ok(equipoService.buscarEquipoPorMarca(marcaEquipo));
+    }
+
+    @GetMapping("/buscarModelo")
+    public ResponseEntity<Equipo> buscarEquipoPorModelo(@RequestParam("modeloEquipo") String modeloEquipo) {
+        return ResponseEntity.ok(equipoService.buscarEquipoPorMarca(modeloEquipo));
+    }
+
+
 }

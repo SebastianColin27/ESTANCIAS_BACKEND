@@ -1,5 +1,6 @@
 package com.equiposseseaz.SistemaControlEquiposSESEAZ.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
@@ -22,6 +23,7 @@ public class Licencia {
     private String numeroSerie;
     private int numeroUsuarios;
     private String suscripcion;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date fechaVencimiento;
     private String usuario;
     private String contrasena;
