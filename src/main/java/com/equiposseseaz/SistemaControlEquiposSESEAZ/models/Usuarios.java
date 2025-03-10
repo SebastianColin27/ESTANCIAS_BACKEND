@@ -15,7 +15,7 @@ import java.util.List;
 
 @Document("usuarios")
 
-public class Usuario {
+public class Usuarios {
 
     @Id
     private ObjectId id;
