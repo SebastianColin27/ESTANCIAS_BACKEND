@@ -1,5 +1,7 @@
 package com.equiposseseaz.SistemaControlEquiposSESEAZ.models;
     import com.fasterxml.jackson.annotation.JsonFormat;
+    import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+    import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
     import lombok.*;
     import org.springframework.data.annotation.Id;
     import org.springframework.data.mongodb.core.mapping.Document;
@@ -15,6 +17,7 @@ package com.equiposseseaz.SistemaControlEquiposSESEAZ.models;
     @Document("personal") // Nombre de la colección en MongoDB
     public class Personal {
         @Id
+        @JsonSerialize(using = ToStringSerializer.class)
         private ObjectId id;
         private String nombre;
         private String cargo;
